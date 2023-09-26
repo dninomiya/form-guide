@@ -5,7 +5,7 @@ import { Check, Copy } from 'lucide-react';
 
 export default function CopyButton({
   value,
-  className = 'absolute top-2 right-2 bg-transparent opacity-60',
+  className = 'absolute top-2 right-2 bg-transparent text-muted-foreground bg-gray-50',
 }: {
   value: string;
   className?: string;

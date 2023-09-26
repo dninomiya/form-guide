@@ -33,10 +33,12 @@ export default function Home() {
 
   return (
     <div className="container max-w-xl">
-      <h1 className="font-bold text-3xl mt-8 my-2">フォームガイド 🇯🇵</h1>
-      <p className="text-muted-foreground mb-8">
-        オープンソースのフォーム実装集
-      </p>
+      <div className="my-20">
+        <h1 className="font-bold text-3xl mt-8 mb-2">フォームガイド 🇯🇵</h1>
+        <p className="text-muted-foreground">
+          オープンソースのフォーム実装ガイド
+        </p>
+      </div>
 
       <div className="space-y-10">
         <Intro />

@@ -41,7 +41,7 @@ export default function FormUnit({
   });
 
   return (
-    <div id={id} className="pb-1 border-b scroll-m-8">
+    <div id={id} className="lg:p-6 lg:border scroll-m-8 lg:rounded-lg">
       <Form {...form}>
         <div className="mb-6 flex justify-between items-center pb-1 border-b">
           <h2 className="font-bold text-lg">{meta.title}</h2>
@@ -66,7 +66,7 @@ export default function FormUnit({
         </div>
 
         <Tabs defaultValue="preview">
-          <TabsList>
+          <TabsList className="mb-4 border-none">
             <TabsTrigger value="preview">プレビュー</TabsTrigger>
             {sources.map((source) => (
               <TabsTrigger key={source.lang} value={source.lang}>

@@ -38,7 +38,7 @@ export default function Component() {
             </FormControl>
             <Button
               type="button"
-              className="absolute top-1 right-1"
+              className="absolute top-1 right-1 text-muted-foreground"
               onClick={() => setVisible((v) => !v)}
               variant="ghost"
               size="smIcon"
