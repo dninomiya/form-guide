@@ -8,4 +8,4 @@ export default z
   .max(15, {
     message: '最大15文字までです。',
   })
-  .transform((val) => val.replaceAll('-', ''));
+  .transform((val) => val.replace(/[\(\)-]/g, ''));
