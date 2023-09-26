@@ -9,12 +9,20 @@ import { ChevronDown, ExternalLink } from 'lucide-react';
 
 const links = [
   {
+    title: '58 Form Design & UX Best Practices',
+    url: 'https://www.ventureharbour.com/form-design-best-practices',
+  },
+  {
     title: '支払いフォームと住所フォームのベストプラクティス',
     url: 'https://web.dev/payment-and-address-form-best-practices/',
   },
   {
     title: 'アドレスフォームのベストプラクティス',
     url: 'https://web.dev/codelab-address-form-best-practices/',
+  },
+  {
+    title: 'アドレスフィールドデザインのベストプラクティス',
+    url: 'https://uxplanet.org/address-field-design-best-practices-a80390caaee0',
   },
   {
     title:
@@ -42,15 +50,15 @@ const links = [
 
 export default function Intro() {
   return (
-    <Collapsible className="border rounded group">
+    <Collapsible className="border rounded-lg group">
       <CollapsibleTrigger className="px-4 py-2.5 w-full text-left flex items-center justify-between data-[state=open]:border-b">
-        はじめに
+        🔰 はじめに
         <ChevronDown size={20} className="group-data-[state=open]:rotate-180" />
       </CollapsibleTrigger>
       <CollapsibleContent className="p-4">
         <div className="prose prose-h2:text-base">
           <p>
-            このページは、オープンソースのフォーム実装ガイドです。フォームの実装において、ユーザー体験を向上させるためのベストプラクティスをまとめています。
+            このページはオープンソースのフォーム実装ガイドです。フォームの実装において、ユーザー体験を向上させるためのベストプラクティスをまとめています。プルリクエストやコメントを歓迎しています。
           </p>
 
           <h2>参考資料</h2>
