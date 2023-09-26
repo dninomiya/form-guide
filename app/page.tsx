@@ -33,8 +33,13 @@ export default function Home() {
 
   return (
     <div className="container max-w-xl">
-      <div className="my-20">
-        <h1 className="font-bold text-3xl mt-8 mb-2">フォームガイド 🇯🇵</h1>
+      <div className="mt-20 mb-10">
+        <img
+          src="/hero.svg"
+          alt=""
+          className="block h-64 md:h-80 mx-auto mb-6"
+        />
+        <h1 className="font-bold text-3xl mt-8 mb-2">ふぉーむがいど</h1>
         <p className="text-muted-foreground">
           オープンソースのフォーム実装ガイド
         </p>
