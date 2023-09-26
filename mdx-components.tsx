@@ -1,3 +1,4 @@
+import Ref from '@/components/ui/ref';
 import { ExternalLink } from 'lucide-react';
 import type { MDXComponents } from 'mdx/types';
 
@@ -26,6 +27,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         return <a href={href}>{children}</a>;
       }
     },
+    Ref,
     ...components,
   };
 }

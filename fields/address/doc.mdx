@@ -1,4 +1,4 @@
-- 自動補完が効かないので郵便番号や住所欄を分割しない
-- 住所蘭を分割すると入力時にユーザー負担が増えるため住所蘭はまとめる
-- 郵便番号による住所検索機能は市町村合併等で正常に機能しなくなるリスクがある。[自動補完があればそもそも不要なので積極的に実装する必要はない](https://web.dev/payment-and-address-form-best-practices/#postal-code-address-lookup)
-- ハイフンが入力された場合は送信時に除去する必要
+- 郵便番号フィールドは 1 フィールドにまとめ、ハイフン有無に両対応する<Ref href="https://blog.kenall.jp/entry/address-form-best-practice#郵便番号フィールドは1フィールドにまとめハイフン有無に両対応する" title="これだけは押さえよう！住所フォームの作り方" />
+- 混乱するので住所蘭を分割しない<Ref href="https://uxplanet.org/address-field-design-best-practices-a80390caaee0" title="アドレスフィールドデザインのベストプラクティス" />
+- 郵便番号による検索で入力を簡素化する<Ref href="https://uxplanet.org/address-field-design-best-practices-a80390caaee0" title="アドレスフィールドデザインのベストプラクティス" />
+- 郵便番号による検索はすべての国で機能するわけではないのでグローバルサービスの場合外すことを検討<Ref href="https://web.dev/i18n/ja/payment-and-address-form-best-practices/#postal-code-address-lookup" title="" />
