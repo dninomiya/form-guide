@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/collapsible';
 import { FIELDS } from '@/lib/fields';
 import { ChevronDown, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
 const links = [
   {
@@ -38,6 +39,13 @@ const links = [
   {
     title: 'Form design best practices',
     url: 'https://coyleandrew.medium.com/form-design-best-practices-9525c321d759',
+  },
+];
+
+const menuItems = [
+  {
+    title: '比較',
+    path: '/comparison',
   },
 ];
 
@@ -76,6 +84,15 @@ export default function Intro() {
                     className="text-muted-foreground/60 ml-2 inline align-baseline"
                   />
                 </a>
+              </li>
+            ))}
+          </ul>
+
+          <h2>その他</h2>
+          <ul>
+            {menuItems.map((link) => (
+              <li key={link.path}>
+                <Link href={link.path}>{link.title}</Link>
               </li>
             ))}
           </ul>
