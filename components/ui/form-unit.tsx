@@ -66,7 +66,7 @@ export default function FormUnit({
         </div>
 
         <Tabs defaultValue="preview">
-          <TabsList className="mb-4 border-none">
+          <TabsList className="mb-3 border-none">
             <TabsTrigger value="preview">プレビュー</TabsTrigger>
             {sources.map((source) => (
               <TabsTrigger key={source.lang} value={source.lang}>

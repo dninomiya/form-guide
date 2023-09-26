@@ -5,6 +5,14 @@ import { FIELDS } from '@/lib/fields';
 import fs from 'fs';
 import Image from 'next/image';
 import path from 'path';
+import { Cherry_Bomb_One } from 'next/font/google';
+import { cn } from '@/lib/utils';
+
+const cherry = Cherry_Bomb_One({
+  weight: '400',
+  preload: false,
+  display: 'swap',
+});
 
 /**
  * TODO: 離脱防止
@@ -39,7 +47,14 @@ export default function Home() {
         <div className="h-64 md:h-80 mx-auto mb-6 relative">
           <Image src={`${AppConfig.basePath}/hero.svg`} alt="" fill />
         </div>
-        <h1 className="font-bold text-3xl mt-8 mb-2">ふぉーむがいど</h1>
+        <h1
+          className={cn(
+            'font-bold text-5xl text-gray-700 mt-8 mb-3',
+            cherry.className
+          )}
+        >
+          ふぉーむがいど
+        </h1>
         <p className="text-muted-foreground">
           オープンソースのフォーム実装ガイド
         </p>
