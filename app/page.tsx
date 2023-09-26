@@ -47,14 +47,16 @@ export default function Home() {
         <div className="h-64 md:h-80 mx-auto mb-6 relative">
           <Image src={`${AppConfig.basePath}/hero.svg`} alt="" fill />
         </div>
-        <h1
-          className={cn(
-            'font-bold text-5xl text-gray-700 mt-8 mb-3',
-            cherry.className
-          )}
-        >
-          ふぉーむがいど
-        </h1>
+        <div className="flex items-end gap-2 mb-3 mt-8">
+          <h1
+            className={cn('font-bold text-5xl text-gray-700', cherry.className)}
+          >
+            ふぉーむがいど
+          </h1>
+          <span className="text-muted-foreground/60 font-bold">
+            {AppConfig.version}
+          </span>
+        </div>
         <p className="text-muted-foreground">
           オープンソースのフォーム実装ガイド
         </p>
