@@ -41,10 +41,10 @@ export default function FormUnit({
   });
 
   return (
-    <div id={id} className="lg:p-6 lg:border scroll-m-8 lg:rounded-lg">
+    <div id={id} className="p-4 md:p-6 border scroll-m-8 rounded-lg">
       <Form {...form}>
         <div className="mb-6 flex justify-between items-center pb-1 border-b">
-          <h2 className="font-bold text-lg">{meta.title}</h2>
+          <h2 className="font-bold text-gray-500 text-lg">{meta.title}</h2>
           <Button size="sm" variant="ghost" className="text-muted-foreground">
             <a
               href={AppConfig.githubURL + '/commits/main/fields/' + id}
@@ -61,7 +61,7 @@ export default function FormUnit({
           </Button>
         </div>
 
-        <div className="prose prose-h2:text-base prose-h3:text-sm prose-h3:text-slate-600 mb-6">
+        <div className="prose prose-h2:text-base prose-h2:text-gray-600 prose-h3:text-sm prose-h3:text-slate-600 mb-6">
           <Doc />
         </div>
 
