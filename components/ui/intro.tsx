@@ -5,7 +5,6 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import { FIELDS } from '@/lib/fields';
 import { ChevronDown, ExternalLink } from 'lucide-react';
 
 const links = [
@@ -51,20 +50,10 @@ export default function Intro() {
       <CollapsibleContent className="p-4">
         <div className="prose prose-h2:text-base">
           <p>
-            集合知で品質や信頼性を高めたいと考えています。ご意見、プルリクエストをお待ちしています🐣
+            このページは、オープンソースのフォーム実装ガイドです。フォームの実装において、ユーザー体験を向上させるためのベストプラクティスをまとめています。
           </p>
 
-          <h2>ガイド一覧</h2>
-
-          <ul>
-            {FIELDS.map((field) => (
-              <li key={field.id}>
-                <a href={`#${field.id}`}>{field.title}</a>
-              </li>
-            ))}
-          </ul>
-
-          <h2>参考リソース</h2>
+          <h2>参考資料</h2>
 
           <ul>
             {links.map((link) => (
