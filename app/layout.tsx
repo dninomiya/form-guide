@@ -6,6 +6,13 @@ import { AppConfig } from '@/lib/config';
 export const metadata: Metadata = {
   title: AppConfig.title,
   description: AppConfig.description,
+  openGraph: {
+    title: AppConfig.title,
+    description: AppConfig.description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+  },
 };
 
 export default function RootLayout({
