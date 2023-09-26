@@ -93,7 +93,7 @@ export default function FormUnit({
               target="_blank"
             >
               <Pen size={20} className="mr-2" />
-              編集リクエスト
+              編集
             </a>
           </Button>
           <Button size="sm" asChild variant="ghost">
