@@ -4,6 +4,10 @@ import Footer from '@/components/ui/footer';
 import { AppConfig } from '@/lib/config';
 
 export const metadata: Metadata = {
+  metadataBase:
+    process.env.NODE_ENV === 'production'
+      ? new URL('https://dninomiya.github.io')
+      : new URL(`http://localhost:${process.env.PORT || 3000}`),
   title: AppConfig.title,
   description: AppConfig.description,
   openGraph: {
