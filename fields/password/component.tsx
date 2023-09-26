@@ -47,7 +47,7 @@ export default function Component() {
             </Button>
           </div>
           <FormDescription>
-            大文字を含む半角英数字と記号を含めてください
+            大文字を含む半角英数字と記号を含む8文字以上
           </FormDescription>
           <FormMessage />
         </FormItem>
