@@ -62,7 +62,7 @@ export default function Component() {
           <FormItem>
             <FormLabel>住所</FormLabel>
             <FormControl>
-              <Textarea autoComplete="address" {...field} />
+              <Textarea autoComplete="street-address" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
