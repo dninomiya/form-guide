@@ -16,7 +16,7 @@ export const FIELDS: FieldMeta[] = [
   {
     id: 'tel',
     title: '電話番号',
-    discussionId: '',
+    discussionId: '5',
     lastUpdatedAt: new Date('2023-09-24'),
   },
   {
