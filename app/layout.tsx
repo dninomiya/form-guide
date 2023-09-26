@@ -26,6 +26,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
+      <head>
+        <link rel="mask-icon" href="/icon.svg" color="#000000" />
+      </head>
       <body>
         <main className="pb-10">{children}</main>
         <Footer />
