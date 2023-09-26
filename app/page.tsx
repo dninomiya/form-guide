@@ -1,5 +1,6 @@
 import FormUnit from '@/components/ui/form-unit';
 import Intro from '@/components/ui/intro';
+import { AppConfig } from '@/lib/config';
 import { FIELDS } from '@/lib/fields';
 import fs from 'fs';
 import Image from 'next/image';
@@ -36,7 +37,7 @@ export default function Home() {
     <div className="container max-w-xl">
       <div className="mt-20 mb-10">
         <div className="h-64 md:h-80 mx-auto mb-6 relative">
-          <Image src="/hero.svg" alt="" fill />
+          <Image src={`${AppConfig.basePath}/hero.svg`} alt="" fill />
         </div>
         <h1 className="font-bold text-3xl mt-8 mb-2">ふぉーむがいど</h1>
         <p className="text-muted-foreground">
