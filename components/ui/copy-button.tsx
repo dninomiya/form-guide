@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
-import React, { useState } from 'react';
 import copy from 'copy-to-clipboard';
 import { Check, Copy } from 'lucide-react';
+import { useState } from 'react';
 
 export default function CopyButton({
   value,

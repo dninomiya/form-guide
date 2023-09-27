@@ -1,7 +1,7 @@
 import { AppConfig } from '@/lib/config';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
 import { Cherry_Bomb_One } from 'next/font/google';
+import Image from 'next/image';
 
 const cherry = Cherry_Bomb_One({
   weight: '400',

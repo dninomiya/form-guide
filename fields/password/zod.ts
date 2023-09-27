@@ -1,5 +1,5 @@
-import { z } from 'zod';
 import isStrongPassword from 'validator/lib/isStrongPassword';
+import { z } from 'zod';
 
 export default z
   .string()

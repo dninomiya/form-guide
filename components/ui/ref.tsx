@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Ref({ href, title }: { href: string; title: string }) {
   return (
     <a
