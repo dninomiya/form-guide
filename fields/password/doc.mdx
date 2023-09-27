@@ -1,7 +1,8 @@
 - 入力は 1 回だけ要求する<Ref href="https://web.dev/i18n/ja/sign-in-form-best-practices/#no-double-inputs" title="サインインフォームのベストプラクティス" />
-- パスワードは非公開にするが、必要に応じてユーザーが見れるようにする<Ref href="https://web.dev/i18n/ja/sign-in-form-best-practices/#show-password" title="サインインフォームのベストプラクティス" />
-- 利用可能な文字、記号を表示する新しいパスワードには autocomplete="new-password" を使い、既存のパスワードには、autocomplete="current-password"を使用する<Ref href="https://web.dev/i18n/ja/sign-in-form-best-practices/#current-password" title="サインインフォームのベストプラクティス" />
-- ブラウザのパスワードジェネレーターは `<input />` タグの minlength と maxlength に従う<Ref href="https://www.chromium.org/developers/design-documents/password-generation/" title="Password Generation" />
-- ハッカーの助けになるので、秘密の質問は使わない
-- 外部の強力なパスワード生成ツールを使えるよう、ペーストをブロックしない
-- 定期的なパスワード変更を強制せず、そもそもパスワードの強度を高める仕様にする
+- 可視不可視の切り替えボタンをつける<Ref href="https://web.dev/i18n/ja/sign-in-form-best-practices/#show-password" title="サインインフォームのベストプラクティス" />
+- パスワード作成時は autocomplete="new-password" を使い、ログイン時は autocomplete="current-password"を使用する<Ref href="https://web.dev/i18n/ja/sign-in-form-best-practices/#current-password" title="サインインフォームのベストプラクティス" />
+- ブラウザのパスワードジェネレータは `<input />` タグの minlength と maxlength に従う<Ref href="https://www.chromium.org/developers/design-documents/password-generation/" title="Password Generation" />
+- 利用可能な文字、記号を明記する
+- ハッカーの助けになるので秘密の質問は使わない
+- パスワードジェネレータが使えるようにペーストをブロックしない
+- 定期的なパスワード変更を強制せずそもそもパスワードの強度を高める仕様にする
