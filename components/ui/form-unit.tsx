@@ -7,8 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { AppConfig } from '@/lib/config';
 import { FIELDS } from '@/lib/fields';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { formatDistanceToNow } from 'date-fns';
-import { ja } from 'date-fns/locale';
+import { format } from 'date-fns';
 import { MessageSquare, Pen } from 'lucide-react';
 import { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
@@ -50,13 +49,10 @@ export default function FormUnit({
               href={AppConfig.githubURL + '/commits/main/fields/' + id}
               target="_blank"
             >
-              最終更新
               <time className="ml-2">
-                {formatDistanceToNow(meta.lastUpdatedAt, {
-                  addSuffix: true,
-                  locale: ja,
-                })}
+                {format(meta.lastUpdatedAt, 'yyyy年MM月dd日')}
               </time>
+              更新
             </a>
           </Button>
         </div>

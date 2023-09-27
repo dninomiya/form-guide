@@ -1,5 +1,5 @@
 import Ref from '@/components/ui/ref';
-import { ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import type { MDXComponents } from 'mdx/types';
 
 // This file allows you to provide custom React components
@@ -17,10 +17,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         return (
           <a href={href} target="_blank">
             {children}
-            <ExternalLink
-              size={14}
-              className="ml-0.5 opacity-60 inline align-baseline"
-            />
+            <ArrowUpRight className="ml-1 text-muted-foreground" size={14} />
           </a>
         );
       } else {

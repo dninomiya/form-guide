@@ -1,11 +1,13 @@
 'use client';
 
+import { Button } from '@/components/ui/button';
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
-import { ChevronDown, ExternalLink } from 'lucide-react';
+import { AppConfig } from '@/lib/config';
+import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
 const links = [
   {
@@ -48,6 +50,21 @@ const links = [
   },
 ];
 
+const navItems = [
+  {
+    url: `${AppConfig.githubURL}/graphs/contributors`,
+    title: 'コントリビュータ',
+  },
+  {
+    url: `${AppConfig.githubURL}/discussions`,
+    title: '意見交換',
+  },
+  {
+    url: AppConfig.xURL,
+    title: 'メンテナーに連絡',
+  },
+];
+
 export default function Intro() {
   return (
     <Collapsible className="border rounded-lg group">
@@ -61,6 +78,28 @@ export default function Intro() {
             このページはオープンソースのフォーム実装ガイドです。フォームの実装において、ユーザー体験を向上させるためのベストプラクティスをまとめています。プルリクエストやコメントを歓迎しています。
           </p>
 
+          <p>
+            <i className="text-muted-foreground text-sm">
+              完成度を高めるため、積極的に意見を募っています🙏🏻
+            </i>
+          </p>
+
+          <h2>関連</h2>
+
+          <ul>
+            {navItems.map((link) => (
+              <li key={link.url}>
+                <a href={link.url} target="_blank">
+                  {link.title}
+                  <ArrowUpRight
+                    className="ml-1 inline-flex align-baseline text-muted-foreground"
+                    size={14}
+                  />
+                </a>
+              </li>
+            ))}
+          </ul>
+
           <h2>参考資料</h2>
 
           <ul>
@@ -68,9 +107,9 @@ export default function Intro() {
               <li key={link.url}>
                 <a href={link.url} target="_blank">
                   {link.title}
-                  <ExternalLink
+                  <ArrowUpRight
+                    className="ml-1 inline-flex align-baseline text-muted-foreground"
                     size={14}
-                    className="text-muted-foreground/60 ml-2 inline align-baseline"
                   />
                 </a>
               </li>
