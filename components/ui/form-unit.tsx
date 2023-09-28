@@ -93,10 +93,7 @@ export default function FormUnit({
             </a>
           </Button>
           <Button size="sm" asChild variant="ghost">
-            <a
-              href={AppConfig.githubURL + '/discussions/' + meta.discussionId}
-              target="_blank"
-            >
+            <a href={AppConfig.commentURL} target="_blank">
               <MessageSquare size={20} className="mr-2" />
               コメント
             </a>
