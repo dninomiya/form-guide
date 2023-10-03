@@ -1,7 +1,7 @@
 'use client';
 
 import CopyButton from '@/components/ui/copy-button';
-import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { PrismAsyncLight as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
 import ts from 'react-syntax-highlighter/dist/esm/languages/prism/typescript';
