@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
+    <html>
       <head>
         <link rel="mask-icon" href="/icon.svg" color="#000000" />
       </head>
