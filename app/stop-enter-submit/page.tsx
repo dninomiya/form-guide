@@ -122,8 +122,8 @@ export default async function Page() {
       <Script async defer src="https://buttons.github.io/buttons.js" />
 
       <p>
-        Thank you for everyone's support. If you have a better approach or any
-        questions, please join{' '}
+        Thank you for everyone&apos;s support. If you have a better approach or
+        any questions, please join{' '}
         <a href={AppConfig.jaSubmitDiscussionURL} target="_blank">
           the discussion
         </a>
