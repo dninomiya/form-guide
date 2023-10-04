@@ -10,7 +10,19 @@ import {
 import { AppConfig } from '@/lib/config';
 import { getFile } from '@/lib/file';
 import { Code } from 'lucide-react';
+import { Metadata } from 'next';
 import Script from 'next/script';
+
+export const metadata: Metadata = {
+  title: 'Please do not use the Enter key as a send trigger. 🙏🏻',
+  description:
+    'Setting the Enter key as a send trigger can make it challenging for Japanese users utilizing Safari to use the form. In Japanese, users compose text using the Enter key to convert into Kanji. If the Enter key is set as the send trigger, the text might be submitted prematurely.',
+  openGraph: {
+    title: 'Please do not use the Enter key as a send trigger. 🙏🏻',
+    description:
+      'Setting the Enter key as a send trigger can make it challenging for Japanese users utilizing Safari to use the form. In Japanese, users compose text using the Enter key to convert into Kanji. If the Enter key is set as the send trigger, the text might be submitted prematurely.',
+  },
+};
 
 export default async function Page() {
   return (
