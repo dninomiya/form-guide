@@ -43,14 +43,14 @@ export default async function Page() {
 
       <h3>Chrome ✅</h3>
       <video
-        autoPlay
+        controls
         loop
         src={`${AppConfig.basePath}/stop-enter-trigger/chrome.mp4`}
         className="rounded-md"
       />
       <h3>Safari 🚫</h3>
       <video
-        autoPlay
+        controls
         loop
         src={`${AppConfig.basePath}/stop-enter-trigger/safari.mp4`}
         className="rounded-md"
