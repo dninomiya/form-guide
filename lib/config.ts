@@ -8,6 +8,8 @@ export const AppConfig = {
   basePath: '/form-guide',
 
   jaEnterKey: {
+    url: 'https://dninomiya.github.io/form-guide/stop-enter-submit',
+    ogImageVersion: 'v1',
     title:
       'Please do not implement `Enter key to Submit` behaviors by directly hooking into the raw keypress event.',
     description:

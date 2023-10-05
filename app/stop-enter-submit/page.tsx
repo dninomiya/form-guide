@@ -1,6 +1,7 @@
 import CorrectForm from '@/app/stop-enter-submit/_components/correct-form';
 import CorrectTextareaForm from '@/app/stop-enter-submit/_components/correct-textarea-form';
 import IncorrectForm from '@/app/stop-enter-submit/_components/incorrect-form';
+import PetitionForm from '@/app/stop-enter-submit/_components/petition-form';
 import { Button } from '@/components/ui/button';
 import CodeBlock from '@/components/ui/code-block';
 import {
@@ -15,6 +16,7 @@ import { getFile } from '@/lib/file';
 import { format } from 'date-fns';
 import { Code } from 'lucide-react';
 import { Metadata } from 'next';
+import Image from 'next/image';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -225,6 +227,19 @@ export default async function Page() {
       </p>
 
       <GithubLink href={AppConfig.jaEnterKey.editURL} />
+
+      <h2>Petition Form</h2>
+
+      <PetitionForm />
+
+      <h3>Image</h3>
+      <Image
+        src={`${AppConfig.basePath}/stop-enter-trigger/ogimage.png`}
+        alt=""
+        className="border"
+        width={2400}
+        height={1350}
+      />
     </div>
   );
 }

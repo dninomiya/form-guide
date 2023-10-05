@@ -1,3 +1,5 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
 import copy from 'copy-to-clipboard';
 import { Check, Copy } from 'lucide-react';
