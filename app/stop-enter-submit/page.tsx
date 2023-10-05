@@ -29,7 +29,10 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <div className="container max-w-lg mx-auto mt-20 prose">
-      <h1>Please do not use the Enter key as a send trigger. 🙏🏻</h1>
+      <h1 className="leading-normal">
+        Please do not implement <code>Enter key to Submit</code> behaviors by
+        directly hooking into the raw keypress event. 🙏🏻
+      </h1>
       <p className="not-prose text-right text-muted-foreground">
         <Button variant="ghost" asChild>
           <a href={AppConfig.jaEnterKey.historyURL} target="_blank">
