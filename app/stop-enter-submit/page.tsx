@@ -1,4 +1,5 @@
 import CorrectForm from '@/app/stop-enter-submit/_components/correct-form';
+import CorrectTextareaForm from '@/app/stop-enter-submit/_components/correct-textarea-form';
 import IncorrectForm from '@/app/stop-enter-submit/_components/incorrect-form';
 import { Button } from '@/components/ui/button';
 import CodeBlock from '@/components/ui/code-block';
@@ -7,11 +8,12 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import ExternalLink from '@/components/ui/external-link';
 import GithubLink from '@/components/ui/github-link';
 import { AppConfig } from '@/lib/config';
 import { getFile } from '@/lib/file';
 import { format } from 'date-fns';
-import { ArrowUpRight, Code } from 'lucide-react';
+import { Code } from 'lucide-react';
 import { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -105,8 +107,11 @@ export default async function Page() {
       </h2>
 
       <p>
-        Please use the <code>onSubmit</code> event as the trigger for the form
-        containing a single input element.
+        When there is only one input field, using{' '}
+        <ExternalLink href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#implicit-submission">
+          implicit submission
+        </ExternalLink>{' '}
+        simplifies the solution.
       </p>
 
       <CorrectForm />
@@ -127,7 +132,46 @@ export default async function Page() {
         </CollapsibleContent>
       </Collapsible>
 
-      <h2>Many Japanese people agree with this sentiment.</h2>
+      <p>
+        For text areas, the solution is to use{' '}
+        <ExternalLink href="https://developer.mozilla.org/ja/docs/Web/API/KeyboardEvent/keyCode">
+          keyCode
+        </ExternalLink>
+        . Although it is marked as deprecated, it is currently the only
+        effective approach.
+      </p>
+
+      <CorrectTextareaForm />
+
+      <Collapsible>
+        <CollapsibleTrigger asChild>
+          <div className="text-right">
+            <Button size="icon" variant="ghost">
+              <Code size={16} />
+            </Button>
+          </div>
+        </CollapsibleTrigger>
+        <CollapsibleContent>
+          <CodeBlock
+            lang="tsx"
+            code={getFile(
+              'app/stop-enter-submit/_components/correct-textarea-form.tsx'
+            )}
+          />
+        </CollapsibleContent>
+      </Collapsible>
+
+      <p>
+        Lastly, these issues would be resolved if Safari handled{' '}
+        <ExternalLink href="https://developer.mozilla.org/ja/docs/Web/API/KeyboardEvent/isComposing">
+          isComposing
+        </ExternalLink>{' '}
+        properly. Upon completion of the conversion, isComposing becomes false,
+        and then the Enter event is processed, resulting in submission during
+        the conversion.
+      </p>
+
+      <h2>Many Japanese users agree with this sentiment.</h2>
 
       <p>
         <a
@@ -147,9 +191,9 @@ export default async function Page() {
       <p>
         Thank you for everyone&apos;s support. If you have a better approach or
         any questions, please join{' '}
-        <a href={AppConfig.jaEnterKey.discussionURL} target="_blank">
+        <ExternalLink href={AppConfig.jaEnterKey.discussionURL}>
           the discussion
-        </a>
+        </ExternalLink>
         !
       </p>
 
@@ -158,10 +202,7 @@ export default async function Page() {
       <ul>
         {AppConfig.jaEnterKey.relatedLinks.map((link) => (
           <li key={link.title}>
-            <a href={link.url} target="_blank">
-              {link.title}
-              <ArrowUpRight className="inline ml-1" size={16} />
-            </a>
+            <ExternalLink href={link.url}>{link.title}</ExternalLink>
           </li>
         ))}
       </ul>
@@ -169,10 +210,9 @@ export default async function Page() {
       <h2>Author</h2>
       <ul>
         <li>
-          <a href={AppConfig.jaEnterKey.author.url} target="_blank">
+          <ExternalLink href={AppConfig.jaEnterKey.author.url}>
             {AppConfig.jaEnterKey.author.name}
-            <ArrowUpRight className="inline ml-1" size={16} />
-          </a>
+          </ExternalLink>
         </li>
       </ul>
       <p>

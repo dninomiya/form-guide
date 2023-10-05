@@ -13,7 +13,7 @@ export default function CorrectForm() {
           setData((e?.currentTarget[0] as HTMLFormElement).value);
         }}
       >
-        <input name="demo" className="rounded-md p-2 border w-full" />
+        <input className="rounded-md p-2 border w-full" />
       </form>
 
       {data && <p>submitted: {data}</p>}
