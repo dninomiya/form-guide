@@ -11,18 +11,16 @@ import GithubLink from '@/components/ui/github-link';
 import { AppConfig } from '@/lib/config';
 import { getFile } from '@/lib/file';
 import { format } from 'date-fns';
-import { Code } from 'lucide-react';
+import { ArrowUpRight, Code } from 'lucide-react';
 import { Metadata } from 'next';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: 'Please do not use the Enter key as a send trigger. 🙏🏻',
-  description:
-    'Setting the Enter key as a send trigger can make it challenging for Japanese users utilizing Safari to use the form. In Japanese, users compose text using the Enter key to convert into Kanji. If the Enter key is set as the send trigger, the text might be submitted prematurely.',
+  title: AppConfig.jaEnterKey.title,
+  description: AppConfig.jaEnterKey.description,
   openGraph: {
-    title: 'Please do not use the Enter key as a send trigger. 🙏🏻',
-    description:
-      'Setting the Enter key as a send trigger can make it challenging for Japanese users utilizing Safari to use the form. In Japanese, users compose text using the Enter key to convert into Kanji. If the Enter key is set as the send trigger, the text might be submitted prematurely.',
+    title: AppConfig.jaEnterKey.title,
+    description: AppConfig.jaEnterKey.description,
   },
 };
 
@@ -155,6 +153,37 @@ export default async function Page() {
           the discussion
         </a>
         !
+      </p>
+
+      <h2>Related Links</h2>
+
+      <ul>
+        {AppConfig.jaEnterKey.relatedLinks.map((link) => (
+          <li key={link.title}>
+            <a href={link.url} target="_blank">
+              {link.title}
+              <ArrowUpRight className="inline ml-1" size={16} />
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      <h2>Author</h2>
+      <ul>
+        <li>
+          <a href={AppConfig.jaEnterKey.author.url} target="_blank">
+            {AppConfig.jaEnterKey.author.name}
+            <ArrowUpRight className="inline ml-1" size={16} />
+          </a>
+        </li>
+      </ul>
+      <p>
+        <i>
+          {`I am not familiar with English, so this text
+        was primarily composed using ChatGPT. I apologize if it's difficult to
+        read. If you find any expressions that seem off, please provide
+        feedback!🙏🏻`}
+        </i>
       </p>
 
       <GithubLink href={AppConfig.jaEnterKey.editURL} />
