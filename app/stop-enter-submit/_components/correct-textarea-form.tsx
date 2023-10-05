@@ -10,8 +10,14 @@ export default function CorrectTextareaForm() {
       <form>
         <textarea
           onKeyDown={(e) => {
-            if (e.keyCode === 13) {
+            // e.keyCode === 229 is for the Japanese IME and Safari.
+            // isComposing does not work with Japanese IME and Safari combination.
+            const preventDefault =
+              e.nativeEvent.isComposing || e.keyCode === 229;
+
+            if (e.key === 'Enter' && !preventDefault) {
               setData(e.currentTarget.value);
+              e.preventDefault();
             }
           }}
           className="rounded-md p-2 border w-full h-40 block"
