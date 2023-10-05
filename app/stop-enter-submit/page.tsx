@@ -55,7 +55,6 @@ export default async function Page() {
       <h3>Chrome ✅</h3>
       <video
         controls
-        loop
         muted
         src={`${AppConfig.basePath}/stop-enter-trigger/chrome.mp4`}
         className="rounded-md border bg-gray-500"
@@ -63,7 +62,6 @@ export default async function Page() {
       <h3>Safari 🚫</h3>
       <video
         controls
-        loop
         muted
         src={`${AppConfig.basePath}/stop-enter-trigger/safari.mp4`}
         className="rounded-md border bg-gray-500"
