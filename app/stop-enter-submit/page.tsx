@@ -7,8 +7,10 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from '@/components/ui/collapsible';
+import GithubLink from '@/components/ui/github-link';
 import { AppConfig } from '@/lib/config';
 import { getFile } from '@/lib/file';
+import { format } from 'date-fns';
 import { Code } from 'lucide-react';
 import { Metadata } from 'next';
 import Script from 'next/script';
@@ -26,8 +28,16 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <div className="container max-w-lg mx-auto mt-10 prose">
+    <div className="container max-w-lg mx-auto mt-20 prose">
       <h1>Please do not use the Enter key as a send trigger. 🙏🏻</h1>
+      <p className="not-prose text-right text-muted-foreground">
+        <Button variant="ghost" asChild>
+          <a href={AppConfig.jaEnterKey.historyURL} target="_blank">
+            Last Updated:&nbsp;
+            {format(new Date(AppConfig.jaEnterKey.updatedAt), 'MMM dd, yyyy')}
+          </a>
+        </Button>
+      </p>
       <p>
         Setting the Enter key as a send trigger can make it challenging for
         Japanese users utilizing Safari to use the form. In Japanese, users
@@ -45,15 +55,17 @@ export default async function Page() {
       <video
         controls
         loop
+        muted
         src={`${AppConfig.basePath}/stop-enter-trigger/chrome.mp4`}
-        className="rounded-md"
+        className="rounded-md border bg-gray-500"
       />
       <h3>Safari 🚫</h3>
       <video
         controls
         loop
+        muted
         src={`${AppConfig.basePath}/stop-enter-trigger/safari.mp4`}
-        className="rounded-md"
+        className="rounded-md border bg-gray-500"
       />
 
       <h2>To Reproduce</h2>
@@ -136,11 +148,13 @@ export default async function Page() {
       <p>
         Thank you for everyone&apos;s support. If you have a better approach or
         any questions, please join{' '}
-        <a href={AppConfig.jaSubmitDiscussionURL} target="_blank">
+        <a href={AppConfig.jaEnterKey.discussionURL} target="_blank">
           the discussion
         </a>
         !
       </p>
+
+      <GithubLink href={AppConfig.jaEnterKey.editURL} />
     </div>
   );
 }

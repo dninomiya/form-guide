@@ -1,6 +1,8 @@
 import FieldList from '@/app/_components/field-list';
 import Hero from '@/app/_components/hero';
 import Intro from '@/app/_components/intro';
+import GithubLink from '@/components/ui/github-link';
+import { AppConfig } from '@/lib/config';
 
 /**
  * TODO: 離脱防止
@@ -17,6 +19,7 @@ export default function Home() {
         <Intro />
         <FieldList />
       </div>
+      <GithubLink href={AppConfig.githubURL} />
     </div>
   );
 }

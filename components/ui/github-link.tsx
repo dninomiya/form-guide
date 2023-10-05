@@ -1,11 +1,10 @@
-import { AppConfig } from '@/lib/config';
 import React from 'react';
 
-const GitHubCorner: React.FC = () => {
+export default function GithubLink({ href }: { href: string }) {
   return (
     <>
       <a
-        href={AppConfig.githubURL}
+        href={href}
         target="_blank"
         className="github-corner absolute top-0 right-0"
         aria-label="View source on GitHub"
@@ -68,6 +67,4 @@ const GitHubCorner: React.FC = () => {
       </style>
     </>
   );
-};
-
-export default GitHubCorner;
+}
