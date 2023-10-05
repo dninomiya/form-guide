@@ -14,7 +14,7 @@ export default function CorrectTextareaForm() {
               setData(e.currentTarget.value);
             }
           }}
-          className="rounded-md p-2 border w-full h-40"
+          className="rounded-md p-2 border w-full h-40 block"
         />
       </form>
 
