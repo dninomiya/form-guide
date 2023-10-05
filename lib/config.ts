@@ -31,6 +31,10 @@ export const AppConfig = {
         title: 'KeyboardEvent.isComposing',
         url: 'https://developer.mozilla.org/ja/docs/Web/API/KeyboardEvent/isComposing',
       },
+      {
+        title: 'Understanding Composition Browser Events',
+        url: 'https://developer.squareup.com/blog/understanding-composition-browser-events/',
+      },
     ],
     author: {
       name: 'Daichi Ninomiya',
