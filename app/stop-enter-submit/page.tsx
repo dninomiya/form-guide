@@ -71,7 +71,7 @@ export default async function Page() {
         className="rounded-md border bg-gray-500"
       />
 
-      <p>If you have difficulty understanding the problem even after watching the video, imagine a situation where "the space key acts as a send trigger." It's like when you try to type "I am Taro", and just after typing "I", it gets sent.</p>
+      <p>{`If you have difficulty understanding the problem even after watching the video, imagine a situation where "the space key acts as a send trigger." It's like when you try to type "I am Taro", and just after typing "I", it gets sent.`}</p>
 
       <h2>To Reproduce</h2>
 
