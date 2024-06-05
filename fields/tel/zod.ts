@@ -2,7 +2,8 @@ import { z } from 'zod';
 
 export default z
   .string()
-  .nonempty({
+  .trim()
+  .min(1, {
     message: '電話番号を入力してください。',
   })
   .max(15, {

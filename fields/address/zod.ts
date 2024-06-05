@@ -3,13 +3,15 @@ import { z } from 'zod';
 export default z.object({
   postalCode: z
     .string()
-    .nonempty({
+    .trim()
+    .min(1, {
       message: '郵便番号を入力してください。',
     })
     .transform((val) => val.replaceAll('-', '')),
   prefecture: z
     .string()
-    .nonempty({
+    .trim()
+    .min(1, {
       message: '都道府県を入力してください。',
     })
     .max(3, {
@@ -17,7 +19,8 @@ export default z.object({
     }),
   address: z
     .string()
-    .nonempty({
+    .trim()
+    .min(1, {
       message: '住所を入力してください。',
     })
     .max(161, {

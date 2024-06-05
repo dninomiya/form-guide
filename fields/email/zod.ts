@@ -2,7 +2,8 @@ import { z } from 'zod';
 
 export default z
   .string()
-  .nonempty({
+  .trim()
+  .min(1, {
     message: 'メールアドレスを入力してください。',
   })
   .email({
