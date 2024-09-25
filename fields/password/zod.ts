@@ -5,9 +5,6 @@ import { z } from 'zod';
 export default z
   .string()
   .trim()
-  .min(1, {
-    message: '名前を入力してください。',
-  })
   .min(8, {
     message: '最小8文字以上です。',
   })
