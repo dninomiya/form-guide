@@ -1,12 +1,13 @@
-import { AppConfig } from '@/lib/config';
-import { cn } from '@/lib/utils';
-import { Cherry_Bomb_One } from 'next/font/google';
-import Image from 'next/image';
+import { AppConfig } from "@/lib/config";
+import { cn } from "@/lib/utils";
+import MarkdownCopyButton from "@/components/ui/markdown-copy-button";
+import { Cherry_Bomb_One } from "next/font/google";
+import Image from "next/image";
 
 const cherry = Cherry_Bomb_One({
-  weight: '400',
+  weight: "400",
   preload: false,
-  display: 'swap',
+  display: "swap",
 });
 
 export default function Hero() {
@@ -17,7 +18,7 @@ export default function Hero() {
       </div>
       <div className="flex items-end gap-2 mb-3 mt-8">
         <h1
-          className={cn('font-bold text-5xl text-gray-700', cherry.className)}
+          className={cn("font-bold text-5xl text-gray-700", cherry.className)}
         >
           ふぉーむがいど
         </h1>
@@ -28,6 +29,7 @@ export default function Hero() {
       <p className="text-muted-foreground">
         オープンソースのフォーム実装ガイド
       </p>
+      <MarkdownCopyButton />
     </div>
   );
 }
