@@ -9,9 +9,9 @@ export const AppConfig = {
 
   jaEnterKey: {
     url: "https://dninomiya.github.io/form-guide/stop-enter-submit",
-    ogImageVersion: "v1",
+    ogImageVersion: "v2",
     title:
-      "Please do not implement `Enter key to Submit` behaviors by directly hooking into the raw keypress event.",
+      "Stop implementing “Enter to submit” by listening directly to raw keydown events.",
     description:
       "Setting the Enter key as a send trigger can make it challenging for Japanese users utilizing Safari to use the form. In Japanese, users compose text using the Enter key to convert into Kanji. If the Enter key is set as the send trigger, the text might be submitted prematurely.",
     discussionURL: "https://github.com/dninomiya/form-guide/discussions/8",

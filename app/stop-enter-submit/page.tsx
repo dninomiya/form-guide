@@ -33,8 +33,8 @@ export default async function Page() {
   return (
     <div className="container max-w-lg mx-auto mt-20 prose">
       <h1 className="leading-normal">
-        Please do not implement <code>Enter key to Submit</code> behaviors by
-        directly hooking into the raw keypress event. 🙏🏻
+        Stop implementing &quot;Enter to submit&quot; by listening directly to
+        raw keydown events. 🙏🏻
       </h1>
       <CopyPromptButton />
       <p className="not-prose text-right text-muted-foreground">
