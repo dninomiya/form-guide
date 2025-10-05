@@ -1,23 +1,24 @@
-import CorrectForm from '@/app/stop-enter-submit/_components/correct-form';
-import CorrectTextareaForm from '@/app/stop-enter-submit/_components/correct-textarea-form';
-import IncorrectForm from '@/app/stop-enter-submit/_components/incorrect-form';
-import PetitionForm from '@/app/stop-enter-submit/_components/petition-form';
-import { Button } from '@/components/ui/button';
-import CodeBlock from '@/components/ui/code-block';
+import CorrectForm from "@/app/stop-enter-submit/_components/correct-form";
+import CorrectTextareaForm from "@/app/stop-enter-submit/_components/correct-textarea-form";
+import IncorrectForm from "@/app/stop-enter-submit/_components/incorrect-form";
+import PetitionForm from "@/app/stop-enter-submit/_components/petition-form";
+import { Button } from "@/components/ui/button";
+import CodeBlock from "@/components/ui/code-block";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from '@/components/ui/collapsible';
-import ExternalLink from '@/components/ui/external-link';
-import GithubLink from '@/components/ui/github-link';
-import { AppConfig } from '@/lib/config';
-import { getFile } from '@/lib/file';
-import { format } from 'date-fns';
-import { Code } from 'lucide-react';
-import { Metadata } from 'next';
-import Image from 'next/image';
-import Script from 'next/script';
+} from "@/components/ui/collapsible";
+import ExternalLink from "@/components/ui/external-link";
+import GithubLink from "@/components/ui/github-link";
+import { AppConfig } from "@/lib/config";
+import { getFile } from "@/lib/file";
+import { format } from "date-fns";
+import { Code } from "lucide-react";
+import { Metadata } from "next";
+import Image from "next/image";
+import Script from "next/script";
+import CopyPromptButton from "./_components/copy-prompt-button";
 
 export const metadata: Metadata = {
   title: AppConfig.jaEnterKey.title,
@@ -35,11 +36,12 @@ export default async function Page() {
         Please do not implement <code>Enter key to Submit</code> behaviors by
         directly hooking into the raw keypress event. 🙏🏻
       </h1>
+      <CopyPromptButton />
       <p className="not-prose text-right text-muted-foreground">
         <Button variant="ghost" asChild>
           <a href={AppConfig.jaEnterKey.historyURL} target="_blank">
             Last Updated:&nbsp;
-            {format(new Date(AppConfig.jaEnterKey.updatedAt), 'MMM dd, yyyy')}
+            {format(new Date(AppConfig.jaEnterKey.updatedAt), "MMM dd, yyyy")}
           </a>
         </Button>
       </p>
@@ -80,7 +82,7 @@ export default async function Page() {
         <li>Launch this page in Safari.</li>
         <li>
           In the form below, type <code>watasi</code> using the Japanese
-          keyboard, and when the conversion balloon appears, press{' '}
+          keyboard, and when the conversion balloon appears, press{" "}
           <code>enter</code>.
         </li>
         <li>The text will be submitted.</li>
@@ -100,7 +102,7 @@ export default async function Page() {
           <CodeBlock
             lang="tsx"
             code={getFile(
-              'app/stop-enter-submit/_components/incorrect-form.tsx'
+              "app/stop-enter-submit/_components/incorrect-form.tsx"
             )}
           />
         </CollapsibleContent>
@@ -111,10 +113,10 @@ export default async function Page() {
       </h2>
 
       <p>
-        When there is only one input field, using{' '}
+        When there is only one input field, using{" "}
         <ExternalLink href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#implicit-submission">
           implicit submission
-        </ExternalLink>{' '}
+        </ExternalLink>{" "}
         simplifies the solution.
       </p>
 
@@ -131,13 +133,13 @@ export default async function Page() {
         <CollapsibleContent>
           <CodeBlock
             lang="tsx"
-            code={getFile('app/stop-enter-submit/_components/correct-form.tsx')}
+            code={getFile("app/stop-enter-submit/_components/correct-form.tsx")}
           />
         </CollapsibleContent>
       </Collapsible>
 
       <p>
-        For text areas, the solution is to use{' '}
+        For text areas, the solution is to use{" "}
         <ExternalLink href="https://developer.mozilla.org/ja/docs/Web/API/KeyboardEvent/keyCode">
           keyCode
         </ExternalLink>
@@ -159,17 +161,17 @@ export default async function Page() {
           <CodeBlock
             lang="tsx"
             code={getFile(
-              'app/stop-enter-submit/_components/correct-textarea-form.tsx'
+              "app/stop-enter-submit/_components/correct-textarea-form.tsx"
             )}
           />
         </CollapsibleContent>
       </Collapsible>
 
       <p>
-        Lastly, these issues would be resolved if Safari handled{' '}
+        Lastly, these issues would be resolved if Safari handled{" "}
         <ExternalLink href="https://developer.mozilla.org/ja/docs/Web/API/KeyboardEvent/isComposing">
           isComposing
-        </ExternalLink>{' '}
+        </ExternalLink>{" "}
         properly. Upon completion of the conversion, isComposing becomes false,
         and then the Enter event is processed, resulting in submission during
         the conversion.
@@ -194,7 +196,7 @@ export default async function Page() {
 
       <p>
         Thank you for everyone&apos;s support. If you have a better approach or
-        any questions, please join{' '}
+        any questions, please join{" "}
         <ExternalLink href={AppConfig.jaEnterKey.discussionURL}>
           the discussion
         </ExternalLink>
