@@ -244,6 +244,22 @@ export default async function Page() {
         width={2400}
         height={1350}
       />
+
+      <h2>Browser Extension</h2>
+      <p>
+        For end users, installing{" "}
+        <ExternalLink href="https://chromewebstore.google.com/detail/kanary-ime-guard/jnkgoehdapednjdhcfahnfhoocijenje">
+          Kanary IME Guard
+        </ExternalLink>{" "}
+        for Chrome can also work around this problem. The extension blocks
+        accidental form submissions caused by pressing Enter while the
+        Japanese IME conversion candidate is still active, even on sites that
+        have not yet adopted the fix above.
+      </p>
+      <p className="text-sm text-muted-foreground">
+        by{" "}
+        <ExternalLink href="https://x.com/kenn">Kenn Ejima</ExternalLink>
+      </p>
     </div>
   );
 }
